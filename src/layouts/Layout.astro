@@ -1,9 +1,9 @@
 ---
 export interface Props {
-  title: string;
+  title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "Midumations" } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,6 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/globals.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -23,13 +24,12 @@ const { title } = Astro.props;
 <style is:global>
   html,
   body {
-    background: 000;
-    margin: 0;
+    background: #111;
+    height: 300vh;
+    overflow-x: hidden;
+    overscroll-behavior: none;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
+    margin: 0;
     width: 100%;
-    height: 100%;
   }
 </style>

@@ -1,16 +1,27 @@
 ---
-
+import heroKeyBackground from "@/assets/hero-key-background.webp";
+import heroKeyLogo from "@/assets/hero-key-logo.webp";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <section class="relative w-full h-screen">
+    <picture
+      id="hero-key"
+      class="fixed inset-0 w-full h-full block transform scale-125"
+    >
+      <img
+        src={heroKeyBackground.src}
+        alt="Hero Background"
+        id="hero-key-background"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <img
+        src={heroKeyLogo.src}
+        alt="Hero Logo"
+        id="hero-key-logo"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </picture>
+  </section>
+</Layout>
